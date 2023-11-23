@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Iframes Example</title>
+</head>
+<body>
+<div id="mainDiv" style="display:flex">
+   <div id="firstDiv">
+    <h2>Links</h2>
+    <iframe id="linksFrame" width="600" height="100" style="border: 1px solid #ccc;"></iframe>
+
+    <h2>Rendered Web Page</h2>
+    <iframe id="renderFrame" name="renderFrame" width="600" height="350" style="border: 1px solid #ccc;"></iframe>
+</div>
+<div id="secondDiv">
+    <h2>HTML Page</h2>
+    <iframe id="htmlFrame" src="https://ck100storage.blob.core.windows.net/teststorage/UNSWSSOBot.html" width="600" height="500" style="border: 1px solid #ccc;"></iframe>
+</div>
+</div>
+    <script>
+        // Array of links for the first iframe
+        const links = [
+            'https://www.example.com',
+            'https://www.google.com',
+            'https://www.bing.com'
+        ];
+
+        // Set links in the first iframe
+        const linksFrame = document.getElementById('linksFrame');
+        linksFrame.srcdoc = '<ul>' + links.map(link => `<li><a href="${link}" target="renderFrame">${link}</a></li>`).join('') + '</ul>';
+
+        
+    </script>
+
+</body>
+</html>
